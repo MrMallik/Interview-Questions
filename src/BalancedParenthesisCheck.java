@@ -7,11 +7,17 @@ import java.util.*;
 public class BalancedParenthesisCheck {
     public static void main(String args[]){
         String exp;
-        int i;
+        int i; boolean flag = true;
         Scanner sc = new Scanner(System.in);
         Deque<Character> stck = new ArrayDeque<Character>();
         System.out.print("Enter expression : ");
         exp = sc.nextLine();
+
+        if(exp.indexOf(')') == -1 && exp.indexOf('}') == -1 && exp.indexOf(']') == -1){
+            flag = false;
+            System.out.println("Not Balanced!");
+        }
+
 
         for(i = 0; i < exp.length(); i++){
             char ch = exp.charAt(i);
@@ -25,7 +31,7 @@ public class BalancedParenthesisCheck {
             }
         }
 
-        if(i == exp.length())
+        if(stck.isEmpty() && flag)
             System.out.println("Balanced!");
 
     }

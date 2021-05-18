@@ -89,7 +89,7 @@ public class EditDistance {
         String str2 = "birendra";
 
         System.out.println("Edit Distance : " + calcDistanceDP(str1, str2, str1.length(), str2.length()));
-        System.out.println(howTo);
+        //System.out.println(howTo);
     }
 
 }
