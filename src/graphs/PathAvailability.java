@@ -1,6 +1,8 @@
 package graphs;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class PathAvailability {
 
@@ -32,6 +34,29 @@ public class PathAvailability {
         return false;
     }
 
+    public static boolean printPath(Node src, Node dest, ArrayList<Node> path){
+
+        src.visited = true;
+        path.add(src);
+
+        if(src == dest) {
+            for(Node n : path)
+                System.out.print(n.name + " ");
+            return true;
+        }
+
+        for(Node neighbour : src.adjList){
+            if(neighbour.visited == false) {
+
+                boolean found = printPath(neighbour, dest, path);
+
+                if(found)
+                    return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         Node n1 = new Node("1");
         Node n2 = new Node("2");
@@ -46,11 +71,13 @@ public class PathAvailability {
 
         graph.addEdge(n1, n2);
         graph.addEdge(n1, n3);
-        graph.addEdge(n2, n3);
+        //graph.addEdge(n2, n3);
         //graph.addEdge(n3, n4);
-        graph.addEdge(n4, n3);
+        //graph.addEdge(n4, n3);
 
-        System.out.println("Path exists between node-1 and node-4 : " + isConnected(graph,
-                n1, n4));
+        /*System.out.println("Path exists between node-1 and node-4 : " + isConnected(graph,
+                n1, n4));*/
+
+        System.out.println(printPath(n1, n3, new ArrayList<>()));
     }
 }

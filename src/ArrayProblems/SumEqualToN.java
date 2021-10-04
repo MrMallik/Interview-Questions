@@ -14,8 +14,9 @@ public class SumEqualToN {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 4, 5};
-        int i, j, n = arr.length, K = 15;
+        //int arr[] = {1, 2, 3, 4, 5};
+        int arr[] = {1, 5, 11, 5};
+        int i, j, n = arr.length, K = 11;
         boolean flag = false;
 
         ArrayList<Integer> temp = new ArrayList<Integer>();

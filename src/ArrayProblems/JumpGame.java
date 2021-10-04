@@ -16,7 +16,7 @@ public class JumpGame {
     }
 
     public static boolean canJumpMemo(int[] arr, int idx, int target,
-                                      HashMap<Integer, Boolean> memo){
+                                      HashMap<Integer, Boolean> memo)   {
         if(idx == target)
             return true;
 
@@ -34,8 +34,8 @@ public class JumpGame {
 
     public static void main(String[] args) {
         //int arr[] = {2,3,1,1,4};
-        //int[] arr = {3,2,1,0,4};
-        int arr[] = {3, 1, 1, 1};
+        int[] arr = {3,2,1,0,4};
+        //int arr[] = {3, 1, 1, 1};
         int target = arr.length - 1;
         int idx = 0;
         //System.out.println(canJump(arr, idx, target));
